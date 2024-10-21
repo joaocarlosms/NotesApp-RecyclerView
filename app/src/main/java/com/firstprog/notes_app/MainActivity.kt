@@ -3,6 +3,7 @@ package com.firstprog.notes_app
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,7 +17,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         todoAdapter = TodoListAdapter(mutableListOf())
         val rvTodoItems = findViewById<RecyclerView>(R.id.rv_TodoItems)
@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
                 val todo = TodoList(todoTitle)
                 todoAdapter.addTodo(todo)
                 etTodoTitle.text.clear()
+                Toast.makeText(this, "Added Todo", Toast.LENGTH_SHORT).show()
             }
         }
 

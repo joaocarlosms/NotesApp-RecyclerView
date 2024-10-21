@@ -1,6 +1,7 @@
 package com.firstprog.notes_app.adapter
 
 import android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,12 +35,14 @@ class TodoListAdapter(
     fun addTodo(todoList: TodoList) {
         todos.add(todoList)
         notifyItemInserted(todos.size - 1)
+        Log.d("Todo", "added: ${todoList.title}")
     }
 
     fun deleteDoneTodos() {
         todos.removeAll { todo ->
             todo.isChecked
         }
+        Log.d("Todo", "removed with success!")
     }
 
     private fun toggleStrikeThrough(tvTodoTitle: TextView, isChecked: Boolean) {

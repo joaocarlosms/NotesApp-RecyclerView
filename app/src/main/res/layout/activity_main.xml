@@ -10,8 +10,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_TodoItems"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/etTodoTitle" />
 
     <EditText
         android:id="@+id/etTodoTitle"
@@ -24,28 +25,22 @@
 
 
     <Button
-        android:id="@+id/btn_deleteDoneTodos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:backgroundTint="@color/blue"
-        android:text="DELETE DONE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="269dp" />
-
-    <Button
         android:id="@+id/btn_addTodos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/blue"
         android:text="ADD TODO"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toEndOf="@+id/etTodoTitle" />
+        app:layout_constraintStart_toEndOf="@+id/etTodoTitle"
+        app:layout_constraintEnd_toStartOf="@+id/btn_deleteDoneTodos" />
 
-
-
+    <Button
+        android:id="@+id/btn_deleteDoneTodos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="DELETE DONE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
